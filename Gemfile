@@ -32,6 +32,7 @@ gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 #Bootstrap
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'jquery-rails'
+gem 'bootstrap_form', '~> 5.0'
 
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
