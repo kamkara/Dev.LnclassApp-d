@@ -29,7 +29,9 @@ gem "tailwindcss-rails"
 
 #FRIENDLY FOR SLUG
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
-
+#Bootstrap
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'jquery-rails'
 
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
