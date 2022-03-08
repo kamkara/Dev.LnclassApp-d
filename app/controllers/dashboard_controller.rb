@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
 
   #Teacher dashboard
   def home
-
+    @LevelList = Level.all.order('created_at desc')
+    @MaterialList = Material.all.order('created_at desc')
   end
 end

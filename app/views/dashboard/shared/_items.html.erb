@@ -24,9 +24,9 @@
                 </div>
     
                 <div class="mx-5">
-                    <h4 class="text-xl font-semibold text-gray-700">5</h4>
-                    <div class="text-gray-500">
-                    <%= link_to 'Add Material', "new-materials", class:"font-semibold no-underline" %>
+                    <h4 class="text-xl font-semibold text-gray-700"><%= @MaterialList.count %></h4>
+                    <div class="text-gray-500 -mx-3">
+                    <%= link_to 'Material', "new-materials", class:"font-semibold no-underline" %>
                     </div>
                 </div>
             </div>
@@ -54,9 +54,9 @@
             </div>
     
             <div class="mx-5">
-                    <h4 class="text-xl font-semibold text-gray-700">5</h4>
+                    <h4 class="text-xl font-semibold text-gray-700"><%= @LevelList.count %></h4>
                     <div class="text-gray-500">
-                    <%= link_to 'Add Level', "new-levels", class:"font-semibold no-underline" %>
+                    <%= link_to 'Level', "new-levels", class:"font-semibold no-underline" %>
                     </div>
                 </div>
         </div>
