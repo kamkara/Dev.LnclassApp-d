@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "new-materials", to:"materials#new"
   get "new-levels", to:"levels#new"
   get "dashboard-admin", to:'dashboard#index'
-  get "dashboard-teacher", to:'dashboard#home'
+  get "setting", to:'dashboard#home'
   get "feeds", to:'home#index'
   resources :materials, execept: %i[new]
   resources :levels, execept: %i[new]
