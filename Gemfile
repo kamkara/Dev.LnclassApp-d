@@ -35,6 +35,13 @@ gem 'jquery-rails'
 gem 'bootstrap_form', '~> 5.0'
 
 
+###### MEMBSERHIP #######
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise-encryptable', '~> 0.2.0'
+#gem 'devise_invitable', '~> 2.0', '>= 2.0.6'
+#gem 'devise-i18n', '~> 1.10', '>= 1.10.2'
+
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
