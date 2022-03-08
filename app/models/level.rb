@@ -1,5 +1,6 @@
 class Level < ApplicationRecord
   belongs_to :user
+  has_many :courses
 
   ################## SLUG ###############
   validates :title, :user_id, :slug, presence: true

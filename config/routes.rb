@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   
   
   root to:'welcome#index'
+  get "create-course", to:"courses#new"
   get "new-materials", to:"materials#new"
   get "new-levels", to:"levels#new"
   get "dashboard-admin", to:'dashboard#index'
   get "setting", to:'dashboard#home'
   get "feeds", to:'home#index'
+  resources :courses
   resources :materials, execept: %i[new]
   resources :levels, execept: %i[new]
   

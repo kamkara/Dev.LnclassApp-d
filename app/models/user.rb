@@ -7,4 +7,5 @@ class User < ApplicationRecord
 ###############   RELATIONS ###################
   has_many :levels
   has_many :materials
+  has_many :courses
 end
