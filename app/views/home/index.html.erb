@@ -4,9 +4,11 @@
 <%= render "home/shared/navbar" %>   
 <main class="container-fluid">
   <div class=" p-5 rounded">
+  <div class="mt-20">
     <%= @FeedMaterial.each do |material| %>
       <div class="font-semibold my-2"> <%= material.title %></div>
     <% end %>
+  </div>
     
 
     <% @FeedCourse.each do |feed| %>
@@ -19,7 +21,6 @@
           <%= feed.content %>
         </div>
       </div>
-    <% end %>
-  
+    <% end %>  
   </div>
 </main>
