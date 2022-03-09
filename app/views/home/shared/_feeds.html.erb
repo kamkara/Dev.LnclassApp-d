@@ -1,6 +1,25 @@
 <% @FeedCourses.each do |course| %>
     <div class="bg-white border p-2 rounded-md mb-2">
         <h1 class="font-bold "><%= course.title %></h1>
-        <p class=""><%= course.content %></p>
+        <!-- Courses-->
+        <div class="border rounded-md mt-2">
+            <div class="p-2">
+                <%= course.content %>
+            </div>
+            <div class="border-top p-2">
+                <span>100 Eleves</span>
+                <span>10 Donner</span>
+            </div>
+        </div>
+        <!-- Exercises -->
+        <div class="border rounded-md mt-2">
+            <div class="p-2">
+                <%= course.content %>
+            </div>
+            <div class="border-top p-2">
+                <span>100 Eleves</span>
+                <span>100 Eleves</span>
+            </div>
+        </div>
     </div>
 <% end %> 
