@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
+  
+  
+  resources :courses do
+    resources :exercices, only: [:new, :create, :show, :index]
+    get "exercices", to:"exercices#index"
+  end
+  resources :exercices, except: [:new, :show, :edit, :create, :update, :destroy, :index] do
+    #member do
+    #  delete 'delete', to: 'exercices#destroy'
+    #  post '/publish', to: 'exercices#publish'
+    #end
+    #resources :questions, only: [:new, :create, :destroy]
+    #resources :results, only: [:new, :create]
+  end
+  
   resources :exercices
-  
-  
   root to:'welcome#index'
   get "course-list", to:"courses#index"
   get "lesson", to:"courses#new"
