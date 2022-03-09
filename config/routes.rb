@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  resources :exercices
   
   
   root to:'welcome#index'
-  get "create-course", to:"courses#new"
+  get "course-list", to:"courses#index"
+  get "lesson", to:"courses#new"
   get "new-materials", to:"materials#new"
   get "new-levels", to:"levels#new"
   get "dashboard-admin", to:'dashboard#index'
   get "setting", to:'dashboard#home'
   get "feeds", to:'home#index'
-  resources :courses
+
+  resources :courses, except: %i[index new]
   resources :materials, execept: %i[new]
   resources :levels, execept: %i[new]
   
