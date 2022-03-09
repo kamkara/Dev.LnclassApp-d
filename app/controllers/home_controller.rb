@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
   def index
-    @FeedMaterial = Material.all.order('created_at desc')
-    @FeedLevel = Level.all.order('created_at desc')
-    @FeedCourse = Course.all.order('created_at desc')
+    @FeedMaterials = Material.all.order('created_at desc')
+    @FeedLevels = Level.all.order('created_at desc')
+    @FeedCourses = Course.all.order('created_at desc')
   end
 end

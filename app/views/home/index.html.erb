@@ -1,26 +1,21 @@
 
 <% @title="Fil des léçons" %>
 
-<%= render "home/shared/navbar" %>   
-<main class="container-fluid">
-  <div class=" p-5 rounded">
-  <div class="mt-20">
-    <%= @FeedMaterial.each do |material| %>
-      <div class="font-semibold my-2"> <%= material.title %></div>
-    <% end %>
-  </div>
-    
-
-    <% @FeedCourse.each do |feed| %>
-      <div class="mt-2">
-        <h2 class="font-semibold">
-          <%= feed.title %>
-        </h2>
-
-        <div class="border rounded-md p-2">
-          <%= feed.content %>
-        </div>
+<%= render "home/shared/navbar" %> 
+<main class="container mt-24">
+  <div class="row align-items-md-stretch bg-light rounded-3">
+    <!-- main feed -->
+    <div class="col-md-3 py-5">
+    <!-- feed material -->
+      <%= render "home/shared/materials" %>
+      <!-- Terms -->
+      <div class="mt-4">
+        <%= render "home/shared/terms" %>        
       </div>
-    <% end %>  
+    </div>
+    <div class="col-md-8 py-5">
+    <!-- feed course -->
+      <%= render "home/shared/feeds" %>
+    </div>
   </div>
 </main>
