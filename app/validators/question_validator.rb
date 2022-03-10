@@ -1,12 +1,12 @@
 class QuestionValidator < ActiveModel::Validator
     def validate(record)
         # may only have 1 right answer
-        if record.answers.count {|a| a.correct_answer} > 1
+        if record.answers.count {|a| a.correct} > 1
             record.errors[:question] << "Une question ne peut avoir qu'une seule bonne réponse !!"
         end
 
         # requires 1 correct answer
-        if record.answers.none? {|a| a.correct_answer}
+        if record.answers.none? {|a| a.correct}
             record.errors[:question] << "Vous avez pas proposez de réponse correcte d'abord !"
         end
 

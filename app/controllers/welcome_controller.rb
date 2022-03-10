@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   #before_action :current_user_auhenticate?
 
   def index
-   
+   redirect_to feeds_path if :current_user
   end
 
   #private
