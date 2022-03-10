@@ -1,10 +1,10 @@
 class Exercice < ApplicationRecord
 
-  # ############  Relations ######
+  #############  Relations ######
   has_many :questions, dependent: :destroy
   belongs_to :user
   belongs_to :courses
-  has_many :results, dependent: :destroy
+  #has_many :results, dependent: :destroy
   #has_many :notes
   
   #############  validator ######

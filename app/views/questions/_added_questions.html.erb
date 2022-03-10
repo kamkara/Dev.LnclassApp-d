@@ -1,0 +1,19 @@
+    <% record.questions.each do |q| %>
+
+        <div class="border border-2 rounded-md bg-white">
+            <span class="m-2">
+                <div class="added-content">
+                    <h4 class="font-bold text-md my-2"><%= q.content %></h4>
+                    
+                        <% q.answers.each do |a| %>
+                                <%= a.content %>
+                            </span>
+                            <%= " -correct answer" if a.correct_answer %>
+                        <% end %>
+                    
+                </div>
+                
+                <%= button_to "Supprimé", {action: 'destroy', exercice_id: q.exercice.id, id: q.id}, method: 'delete', class: "delete-question border bg-red-500 rounded-md" %>
+            </span>
+        </div>
+    <% end %>
