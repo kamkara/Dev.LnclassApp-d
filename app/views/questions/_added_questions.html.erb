@@ -1,19 +1,15 @@
-    <% record.questions.each do |q| %>
-
-        <div class="border border-2 rounded-md bg-white">
-            <span class="m-2">
-                <div class="added-content">
-                    <h4 class="font-bold text-md my-2"><%= q.content %></h4>
-                    
-                        <% q.answers.each do |a| %>
-                                <%= a.content %>
-                            </span>
-                            <%= " -correct answer" if a.correct %>
-                        <% end %>
-                    
+<% record.questions.each do |q| %>
+    <div class="border rounded-md bg-white p-2 my-2">
+        <div class="added-content ">
+            <p class="font-bold text-md"><%= q.content %></p>
+            <% q.answers.each do |a| %>
+                <div class="rounded-md p-2 bg-white ">
+                    <span class="border rounded-md p-2"><%= a.content %></span>
+                    <%= " -correct" if a.correct %>
                 </div>
-                
-                <%= button_to "Supprimé", {action: 'destroy', exercice_id: q.exercice.id, id: q.id}, method: 'delete', class: "delete-question border bg-red-500 rounded-md" %>
-            </span>
+            <% end %>
         </div>
-    <% end %>
+        <%= button_to "Supprimé", {action: 'destroy', exercice_id: q.exercice.id, id: q.id},
+         method: 'delete', class: "border px-2 bg-gray-200 rounded-md" %>
+    </div>
+<% end %>

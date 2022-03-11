@@ -1,18 +1,23 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New question</h1>
 
-  <div class="mt-8">
-        <%= render 'shared/validation_errors', :record => @question %>
-        <%= render "layouts/shared/flash/notices" %>
-    </div>
-    <div class="w-1/2">
+<main class="container-fluid mt-20">
+  <div class="row align-items-md-stretch bg-light rounded-md">
+    <!-- main feed -->
+    <div class="col-md-4 py-5">
+        <!-- feed material -->
         <%= form_for [@exercice, @question] do |f| %>
+            <h1 class="font-bold text-4xl">New question</h1>
+            <div class="mt-8">
+                <%= render 'shared/validation_errors', :record => @question %>
+                <%= render "layouts/shared/flash/notices" %>
+            </div>
 
             <%= f.hidden_field :exercice_id, value: @exercice.id %>
                 
             <%= f.text_field :content, class:"p-2 rounded-md", placeholder: "> le contenu" %>
-            <!-- render questions -->
-            <%= render 'answer_fields', :f => f %>
+            <div class="my-2">
+                <!-- render questions -->
+                <%= render 'answer_fields', :f => f %>
+            </div>
             <div class="mt-4">
                 <%= f.text_area :answer, class:"p-2 rounded-md", placeholder: "> l'explications ..." %>
             </div>
@@ -22,18 +27,19 @@
             </div>
         <% end %>
     </div>
-    
-    <div class="w-1/2">
-        <div class="questions-column mt-8">
-            <%= button_to "Rendre public!", [:publish, @exercice], class: "publish" %>
+    <div class="col-md-8 py-5">
+    <!-- feed course -->
+      <div class="questions-column mt-8">
+            <%= button_to "Rendre public!", [:publish, @exercice], class: "bg-blue-200 font-semibold rounded-md mb-2 p-2" %>
             <% if @exercice.questions.any? %>
-                <%= render 'added_questions', record: @exercice %>
+                <div class="my-2">
+                    <%= render 'added_questions', record: @exercice %>
+                </div>
             <% else %>
                 <p>Ajouter les questions!</p>
             <% end %>
         </div>
     </div>
-
-  <%= link_to 'Back to questions', questions_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+  </div>
+</main>
 
