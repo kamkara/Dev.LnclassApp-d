@@ -1,12 +1,11 @@
 
-<%= f.fields_for :answers do |answer_form| %>
- <div class="answer-h">
+<%= f.fields_for :answers do |answer| %>
   <!-- answer field-->
   <div class="correct_select">
-    <%= answer_form.check_box :correct, checked_value: true, unchecked_value: false, id:"answer_option" %>
-    <%= answer_form.label :correct , "Reponse correcte ?", id:"answer_option" %>
+    <%= answer.check_box :correct, checked_value: true, unchecked_value: false %>
+    <%= answer.label :correct , "Reponse correcte ?" %>
   </div>
- </div>
   <!-- answer field-->
-  <%= answer_form.text_field :content, placeholder: " proposition ...", class:"p-2 rounded-md " %>
+  <%= answer.text_field :content, placeholder: " proposition ...",
+   class:"ln--question" %>
 <% end %>

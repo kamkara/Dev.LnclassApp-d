@@ -1,11 +1,12 @@
 
 <main class="container-fluid mt-20">
-  <div class="row align-items-md-stretch bg-light rounded-md">
+  <div class="row bg-light rounded-md">
     <!-- main feed -->
-    <div class="col-md-4 py-5">
+    <div class="col-md-6 py-5">
         <!-- feed material -->
         <%= form_for [@exercice, @question] do |f| %>
-            <h1 class="font-bold text-4xl">New question</h1>
+        <div class="border rounded-md  p-2">
+            <h1 class="font-bold text-4xl">Nouvelle question</h1>
             <div class="mt-8">
                 <%= render 'shared/validation_errors', :record => @question %>
                 <%= render "layouts/shared/flash/notices" %>
@@ -13,21 +14,24 @@
 
             <%= f.hidden_field :exercice_id, value: @exercice.id %>
                 
-            <%= f.text_field :content, class:"p-2 rounded-md", placeholder: "> le contenu" %>
+            <%= f.text_field :content, placeholder: "> le contenu",
+             class:"ln--question" %>
             <div class="my-2">
                 <!-- render questions -->
                 <%= render 'answer_fields', :f => f %>
             </div>
             <div class="mt-4">
-                <%= f.text_area :answer, class:"p-2 rounded-md", placeholder: "> l'explications ..." %>
+                <%= f.text_area :answer, placeholder: "> l'explications ...",
+                 class:"ln--question" %>
             </div>
                       
             <div class="">
                 <%= f.submit "Question Suivante", class:"bg-blue-200 p-2 rounded-md my-8" %>
             </div>
+        </div>
         <% end %>
     </div>
-    <div class="col-md-8 py-5">
+    <div class="col-md-6 py-5">
     <!-- feed course -->
       <div class="questions-column mt-8">
             <%= button_to "Rendre public!", [:publish, @exercice], class: "bg-blue-200 font-semibold rounded-md mb-2 p-2" %>

@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .ln--question {
+    @apply p-2 rounded-md block border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
   }
 }
 
-*/
+
 @import 'components/actiontext.css';
