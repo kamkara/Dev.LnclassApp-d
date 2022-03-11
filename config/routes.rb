@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :answers
-  resources :questions
-  
   
   resources :courses do
     resources :exercices, only: [:new, :create, :show, :index]
@@ -25,11 +22,13 @@ Rails.application.routes.draw do
   get "dashboard-admin", to:'dashboard#index'
   get "setting", to:'dashboard#home'
   get "feeds", to:'home#index'
-
+  
   resources :courses, except: %i[index new]
+  resources :answers
+  resources :questions  
   resources :materials, execept: %i[new]
   resources :levels, execept: %i[new]
-  
+    
   devise_for :users, path: '', path_names: { sign_in: 'Connecter', 
               sign_out: 'logout', password: 'secret', confirmation: 'verification',
               unlock: 'unblock', registration: '', sign_up: 'inscription-eleves' }
