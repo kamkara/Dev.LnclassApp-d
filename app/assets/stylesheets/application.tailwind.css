@@ -5,7 +5,7 @@
 
 
 @layer components {
-  .ln--question {
+  .ln--field {
     @apply p-2 rounded-md block border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
   }
 }

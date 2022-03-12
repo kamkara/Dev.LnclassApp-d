@@ -29,7 +29,7 @@ class ExercicesController < ApplicationController
   end
   def publish
     @exercice = Exercice.friendly.find(params[:id])
-    redirect_to course_path(@exercice.course) and return if @exercice.update(published: true)
+    redirect_to feeds_path and return if @exercice.update(published: true)
         
     flash.notice << [@exercice.errors.full_messages]
     redirect_back fallback_location: "/"

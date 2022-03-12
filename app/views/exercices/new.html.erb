@@ -3,7 +3,7 @@
     <%= form_for @exercice, url: course_exercices_path() do |f| %>
         <%= render 'shared/validation_errors', :record => @exercice %>
         <div class="">
-            <%= f.text_field :name , class:"border-1 p-2 rounded-md", placeholder:"le title de l'exercice ..." %>
+            <%= f.text_field :name , class:"ln--field", placeholder:"le title de l'exercice ..." %>
         </div>
             <%= f.hidden_field :course_id, value: @exercice.course_id %>
         <div class="mt-2">

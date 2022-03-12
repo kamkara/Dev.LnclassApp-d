@@ -4,7 +4,9 @@
             <p class="font-bold text-md"><%= q.content %></p>
             <% q.answers.each do |a| %>
                 <div class="rounded-md p-2 bg-white ">
-                    <span class="border rounded-md p-2"><%= a.content %></span>
+                    <p class="border rounded-md p-2   <%= " bg-green-200 font-bold" if a.correct %>">
+                        <%= a.content %>
+                    </p>
                     <%= " -correct" if a.correct %>
                 </div>
             <% end %>
