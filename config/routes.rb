@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   resources :courses do
     resources :exercices, only: [:new, :create, :show, :index]
     get "exercices", to:"exercices#index"
+    post '/publish', to: 'exercices#publish'
   end
   resources :exercices, except: [:new, :show, :edit, :create, :update, :destroy, :index] do
     member do
       delete 'delete', to: 'exercices#destroy'
-      post '/publish', to: 'exercices#publish'
     end
     resources :questions, only: [:new, :create, :destroy]
     #resources :results, only: [:new, :create]
