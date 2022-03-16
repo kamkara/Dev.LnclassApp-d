@@ -26,7 +26,7 @@ class ResultsController < ApplicationController
   # GET /results/1/edit
   def edit
   end
-
+cl
 
   # PATCH/PUT /results/1 or /results/1.json
   def update

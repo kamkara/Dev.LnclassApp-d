@@ -1,6 +1,6 @@
  <!-- show exercice-->
- <% course.exercices.chrono.each do |q| %>
- <!-- completed by exercice-->
+ <%  @FeedCourses.exercices.chrono.each do |q| %>
+    <!-- completed by exercice-->
     <% if q.completed_by(current_user) %>
         <%= render partial: "home/shared/exercices/completed", locals: {q: q} %>
     <% else %>
