@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_09_155744) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_15_181939) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -135,6 +135,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_155744) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
+  create_table "results", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "exercice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercice_id"], name: "index_results_on_exercice_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -180,4 +189,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_155744) do
   add_foreign_key "materials", "users"
   add_foreign_key "questions", "exercices"
   add_foreign_key "questions", "users"
+  add_foreign_key "results", "exercices"
+  add_foreign_key "results", "users"
 end

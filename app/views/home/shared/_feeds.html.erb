@@ -11,10 +11,13 @@
             <!-- Feed Bar-->
             <%= render "home/shared/feeds_bar" %>
         </div>
+
+
         <!-- Exercises -->
         <div class="border rounded-md mt-2">
             <div class="p-2">
-                <%= course.content %>
+            <p class="font-bold text-md "> Commencez les exercices</p>
+                <%= render partial: "home/shared/exercices", locals: {course: course} %>
             </div>
             <!-- Exercise Bar -->
             <div class="border-top flex items-center p-2">
@@ -24,3 +27,11 @@
         </div>
     </div>
 <% end %> 
+
+
+<!-- Add exercices list for medium--->
+    <div class="card mt-2 md:w-2/3">
+      <div class="m-2">
+        
+    </div>
+  </div>

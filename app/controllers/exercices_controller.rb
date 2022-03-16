@@ -27,6 +27,8 @@ class ExercicesController < ApplicationController
     redirect_to new_exercice_question_path(@exercice) and return if @exercice.save
     render :new
   end
+
+  
   def publish
     @exercice = Exercice.friendly.find(params[:id])
     redirect_to feeds_path and return if @exercice.update(published: true)
