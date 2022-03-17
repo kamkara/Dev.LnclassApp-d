@@ -1,9 +1,0 @@
- <!-- show exercice-->
- <% @FeedExercices.CourseFinder.each do |q| %>
-    <!-- completed by exercice-->
-    <% if q.completed_by(current_user) %>
-        <%= render partial: "home/shared/exercices/completed", locals: {q: q} %>
-    <% else %>
-        <%= render partial: "home/shared/exercices/unattempted", locals: {q: q} %>
-    <% end %>
-<% end %>

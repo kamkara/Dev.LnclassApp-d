@@ -46,6 +46,25 @@ module ApplicationHelper
         flash_type.to_s
       end
     end
-  
+    
+    #role
+  def currentUserRole?(current_user)
+    case current_user.role
+    when "Student"
+      ":student?"
+    when "Teacher"
+      ":teacher?"
+    when "Team"
+      ":team?"
+    else
+      ""
+    end
+  end
+
+  def moderator?(current_user)
+    if current_user.role === "Team" || current_user.id ===  @course.user_id
+      ":moderator?"
+    end
+  end
 
 end

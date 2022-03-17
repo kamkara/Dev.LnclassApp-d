@@ -5,4 +5,5 @@ class AnsweredQuestion < ApplicationRecord
 
   accepts_nested_attributes_for :answer
   accepts_nested_attributes_for :question
+  
 end

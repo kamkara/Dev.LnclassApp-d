@@ -7,12 +7,13 @@
     <%= course.content %>
   </p>
 
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Published:</strong>
-    <%= course.published %>
-  </p>
-
+  <!-- Add exercices list for medium--->
+    <div class="card mt-2 md:w-2/3">
+      <div class="m-2">
+      <p class="font-bold text-md "> Commencez les exercices</p>
+      <%= render partial: "courses/shared/exercices",locals: {course: @course} %>
+    </div>
+    
   <% if action_name != "show" %>
     <%= link_to "Show this course", course, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this course', edit_course_path(course), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
