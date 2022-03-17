@@ -7,7 +7,7 @@ class ResultsController < ApplicationController
   end
     
   def create
-    @result = Result.new(results_params.merge({user: current_user}))
+    @result =  current_user.results.buidl(results_params)
     redirect_to course_path(@result.exercice.course) and return if @result.save
     render :new
   end
@@ -26,7 +26,6 @@ class ResultsController < ApplicationController
   # GET /results/1/edit
   def edit
   end
-cl
 
   # PATCH/PUT /results/1 or /results/1.json
   def update
