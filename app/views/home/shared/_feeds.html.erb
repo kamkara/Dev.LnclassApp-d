@@ -1,12 +1,12 @@
-<% @FeedCourses.each do |course| %>
+<% @FeedCourses.each do |c| %>
     <div class="bg-white border p-2 rounded-md mb-2">
         <h2 class="font-bold" >
-            <%= course.title %>
+            <%= c.title %>
         </h2>
         <!-- Courses-->
         <div class="border rounded-md mt-2">
             <div class="p-2">
-                <%= course.content %>
+                <%= c.content %>
             </div>
             <!-- Feed Bar-->
             <%= render "home/shared/feeds_bar" %>
@@ -15,7 +15,7 @@
         <div class="border rounded-md mt-2">
             <div class="p-2">
             <p class="font-bold text-md "> Commencez les exercices</p>
-                <%= render partial: "home/shared/exercices" %>
+                <%= render "home/shared/exercices" %>
             </div>
             <!-- Exercise Bar -->
             <div class="border-top flex items-center p-2">

@@ -1,9 +1,9 @@
 class Home < ApplicationRecord
 
     #############  Request Scope ######
+    scope :ExerciseOfCourse, -> {where("course_id == ?", c.id).order(created_at: :asc)}
   scope :ready, -> { where("published == false")}
   scope :chrono, -> { order(created_at: :desc)}
-
 
   #current user completed exercice
     def completed_by(user)

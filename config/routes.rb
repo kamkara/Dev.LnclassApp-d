@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
   
   root to:'welcome#index'
-  get "course-list", to:"courses#index"
-  get "lesson", to:"courses#new"
-  get "new-materials", to:"materials#new"
-  get "new-levels", to:"levels#new"
-  get "dashboard-admin", to:'dashboard#index'
-  get "setting", to:'dashboard#home'
   get "feeds", to:'home#index'
-  
   resources :courses do
     resources :exercices, only: [:new, :create, :show, :index]
     get "exercices", to:"exercices#index"
     post '/publish', to: 'exercices#publish'
   end
-
+  
+  get "course-list", to:"courses#index"
+  get "lesson", to:"courses#new"
+  get "new-materials", to:"materials#new"
+  get "new-levels", to:"levels#new"
+  
+  get "dashboard-admin", to:'dashboard#index'
+  get "setting", to:'dashboard#home'
   resources :exercices, except: [:new, :show, :edit, :create, :update, :destroy, :index] do
     member do
       delete 'delete', to: 'exercices#destroy'
