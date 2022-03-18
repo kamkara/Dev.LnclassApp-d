@@ -7,7 +7,7 @@ class ResultsController < ApplicationController
   end
     
   def create
-    @result =  current_user.results.buidl(results_params)
+    @result = Result.new(result_params.merge({user: current_user}))
     redirect_to course_path(@result.exercice.course) and return if @result.save
     render :new
   end
@@ -58,6 +58,6 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
-      params.require(:result).permit(:user_id, :exercice_id)
+      params.require(:result).permit(:user_id, :exercice_id, answered_questions_attributes: [:answer_id, :question_id])
     end
 end

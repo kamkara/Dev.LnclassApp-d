@@ -13,7 +13,7 @@ class Result < ApplicationRecord
 
 
   def grade
-    correct = answers.where(correct_answer: true).count
+    correct = answers.where(correct: true).count
     percentage = (correct.to_f / answers.count.to_f) * 100
     return "#{percentage.to_i}%"
   end
