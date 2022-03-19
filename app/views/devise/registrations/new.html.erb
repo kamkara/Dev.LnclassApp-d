@@ -3,11 +3,24 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <br />
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :Nom %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Prénom ...", class:"" %>
   </div>
-
+  <div class="field">
+    <%= f.label :Prénom %><br />
+    <%= f.text_field :last_name, placeholder:"Prénom ...", class:"" %>
+  </div>
+  <div class="field">
+    <%= f.label :"N° Matricule" %><br />
+    <%= f.phone_field :matricule, placeholder:"N° Matricule ...", class:"" %>
+  </div>
+  <div class="field">
+    <%= f.label :"N° WhatsApp" %><br />
+    <%= f.phone_field :contact, placeholder:"N° WhatsApp ...", class:"" %>
+  </div>
+<%= f.hidden_field :role, value:"Student" %>
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -16,13 +29,8 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
   <div class="actions">
-    <%= f.submit "Sign up", class:"btn btn-primary p-2 border rounded-md mt-2" %>
+    <%= f.submit "S'INSCRIRE", class:"btn btn-primary p-2 border rounded-md mt-2" %>
   </div>
 <% end %>
 

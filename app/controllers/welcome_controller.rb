@@ -7,7 +7,11 @@ class WelcomeController < ApplicationController
   private
     #redirect current_user to feed if signed
     def current_user_auhenticate?
-     redirect_to feeds_path if :user_signed_in?
+      if :user_signed_in?
+        feeds_path
+      else
+        root_path
+      end
    end
   
 end

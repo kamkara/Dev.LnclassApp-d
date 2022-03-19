@@ -4,9 +4,12 @@ import "controllers"
 
 
 //  require bootstrap
+//= require bootstrap
 //= require jquery3
 //= require popper
-//= require bootstrap
+//= require jquery
+//= require jquery_ujs
+
 
 // rich_text import
 import "trix"

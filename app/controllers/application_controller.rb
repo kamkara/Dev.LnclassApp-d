@@ -3,21 +3,20 @@ class ApplicationController < ActionController::Base
     # Add sign up params
     protect_from_forgery with: :exception
     #login params
+    
     before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :find_levels
     #before_action :find_schools
     #before_action :find_cityEreas
 
-    #redirect current_user to feed if signed
-    def current_user_auhenticate?
-      redirect_to feeds_path if user_signed_in?
+   
+    def after_sign_in_path_for(resource)
+        if current_user.role === "Student"
+         feeds_path
+        else
+         root_path
+        end
     end
-
-    #redirect current_user to feed if  not signed
-    def current_user_unauhenticate
-      redirect_to root_path  if !user_signed_in?
-    end
-    
   
   protected
     # If you have extra params to permit, append them to the sanitizer.
