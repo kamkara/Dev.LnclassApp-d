@@ -24,12 +24,13 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
     sign_up_params          = [ :first_name, :last_name, :full_name, :matricule, :level_name,
                                 :material_name, :school_name, :contact, :city_name, :role, :email,
-                                :password, :slug, :gender]
+                                :password, :slug, :gender, :payment,
+                                :avatar_profil]
                                 
-    update_sign_up_params  = [ :school_name, :status, :avatar_profil, :status_payment]
+    #update_params  = [ :school_name, :status, :avatar_profil, :status_payment]
      
     devise_parameter_sanitizer.permit :sign_up, keys: sign_up_params
-      devise_parameter_sanitizer.permit :account_update, keys: update_sign_up_params
+      devise_parameter_sanitizer.permit :account_update, keys: sign_up_params
       devise_parameter_sanitizer.permit :sign_in, keys: [:logged, :password]
     end 
 
@@ -38,11 +39,11 @@ class ApplicationController < ActionController::Base
         @levels = Level.all
       end
       def find_schools
-        @schools = School.all
+        #@schools = School.all
       end
       
       def find_cityEreas
-        @city_ereas = CityErea.all
+        #@city_ereas = CityErea.all
       end
 
 end
