@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   root to:'welcome#index'
   get "feeds", to:'home#index'
   
+  #Course
   get "course-list", to:"courses#index"
   get "lesson", to:"courses#new"
-  get "new-materials", to:"materials#new"
-  get "new-levels", to:"levels#new"
+  
+  #Dashboard
   get "dashboard-admin", to:'dashboard#index'
   get "setting", to:'dashboard#home'
+  get "new-materials", to:"materials#new"
+  get "new-levels", to:"levels#new"
+  
   
   resources :courses do
     resources :exercices, only: [:new, :create, :show, :index]
@@ -29,6 +33,8 @@ Rails.application.routes.draw do
   resources :answers, 
             :questions,
             :results,
+            :levels,
+            :materials,
             :materials, execept: %i[new]
   
   
