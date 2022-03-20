@@ -2,12 +2,13 @@ class CoursesController < ApplicationController
  
   before_action :authenticate_user!
   before_action :set_course, only: %i[ show edit update destroy ]
-  before_action :find_levels
-  before_action :find_materials
+  
+  before_action :find_levels, :find_materials
+  
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.order("created_at desc")
   end
 
   # GET /courses/1 or /courses/1.json
@@ -30,7 +31,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         
-        format.html { redirect_to "/course-list", notice: "Course was successfully created." }
+        format.html { redirect_to "/courses-show", notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }

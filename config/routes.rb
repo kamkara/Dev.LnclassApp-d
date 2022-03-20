@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "feeds", to:'home#index'
   
   #Course
+  get "courses-show", to:"courses#show"
   get "course-list", to:"courses#index"
   get "lesson", to:"courses#new"
   
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   end
   
   
-  resources :courses, except: %i[index new]
+  resources :courses, except: %i[index new ]
   resources :answers, 
             :questions,
             :results,

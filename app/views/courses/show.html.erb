@@ -6,13 +6,11 @@
 
     <%= render @course %>
 
-    <%= link_to 'Edit this course', edit_course_path(@course), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edite léçon', edit_course_path(@course), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Exercices', new_course_exercice_path(@course), class:"mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %> 
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this course', course_path(@course), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to 'Supprimer', course_path(@course), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <h2 class="font-semibold text-xl m-2 mt-20">
-      <% if currentUserRole?(current_user) === ":teacher?" %> - <%= link_to 'Exercices', new_course_exercice_path(@course) %><% end %>
-    </h2>
-    <%= link_to 'Back to courses', courses_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    
   </div>
 </div>

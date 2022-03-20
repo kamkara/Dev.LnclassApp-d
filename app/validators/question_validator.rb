@@ -17,11 +17,11 @@ class QuestionValidator < ActiveModel::Validator
 
         # answers must be unique
         if !!record.answers.collect {|a| a.content}.uniq!
-            record.errors[:question] << "A question cannot have duplicate answers."
+            record.errors[:question] << "Cette reponse existe déja."
         end
         # question is unique for a given exrcice
         if record.exercice.questions.any? {|q| q.content == record.content }
-            record.errors[:question] << "This question has already been added to this quiz."
+            record.errors[:question] << "Cette question existe déja."
         end
 
         #je voudrais verifier la presence d'une explication
