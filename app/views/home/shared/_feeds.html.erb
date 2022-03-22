@@ -14,11 +14,23 @@
             <% end %>
             </div>
             <!-- Feed Bar-->
-            <div class="flex flex-wrap border-top p-2">
-            <div class="flex place-items-center">
-                <span class=""> <%= @FeedExercices.where("course_id = ?", c.id).count %> Exercices</span>
-                <span class="flex"> Voir Exercices </span>
-            </div>
+            <div class="flex flex-wrap border-top">
+               <div class="flex place-items-center">
+                    <div class="flex place-items-end mx-4">
+                        <div class=" text-sm">
+                        <% if @FeedExercices.where("course_id = ?", c.id).count == 0 %>
+                            <p class="">Pas d'exercice</p>
+                        <% elsif @FeedExercices.where("course_id = ?", c.id).count == 1 %>
+                            <p class=""> 1 exercice</p>
+                        <% else %>
+                            <p class=""> <%= @FeedExercices.where("course_id = ?", c.id).count %> Exercices</p>
+                        <% end %>
+                    </div>
+                    <div class="text-sm">
+                        <p class="">Exercicer</p>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
         
