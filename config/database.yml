@@ -84,7 +84,11 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: Dev_Lnclassapp_production
-  username: Dev_Lnclassapp
-  password: <%= ENV["DEV_LNCLASSAPP_DATABASE_PASSWORD"] %>
+  production:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
+  username: <%= ENV['LNCLASSAPP_DATABASE_USERNAME'] %>
+  password: <%= ENV['LNCLASSAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['LNCLASSAPP_DATABASE_HOST'] %>
+  port: <%= ENV['LNCLASSAPP_DATABASE_PORT'] %>
