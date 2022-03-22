@@ -25,7 +25,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
+#gem "tailwindcss-rails"
 
 #FRIENDLY FOR SLUG
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
