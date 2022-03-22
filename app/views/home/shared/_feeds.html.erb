@@ -1,7 +1,9 @@
 <% @FeedCourses.each do |c| %>
     <div class="bg-white border p-2 rounded-md mb-2">
-        <h2 class="font-bold" >
-            <%= c.title %>
+        <h2 class="font-semibold " >
+            <p class="text-xl">
+                <%= c.title %>
+            </p>
         </h2>
         <!-- Courses-->
         <div class="border rounded-md mt-2">
@@ -12,19 +14,13 @@
             <% end %>
             </div>
             <!-- Feed Bar-->
-            <%= render "home/shared/feeds_bar" %>
-        </div>
-        <!-- Exercises -->
-        <div class="border rounded-md mt-2">
-            <div class="p-2">
-            <p class="font-bold text-md "> Commencez les exercices</p>
-               
+            <div class="flex flex-wrap border-top p-2">
+            <div class="flex place-items-center">
+                <span class=""> <%= @FeedExercices.where("course_id = ?", c.id).count %> Exercices</span>
+                <span class="flex"> Voir Exercices </span>
             </div>
-            <!-- Exercise Bar -->
-            <div class="border-top flex items-center p-2">
-                <span>500 Eleves</span>
-                <span> Traiter</span>
             </div>
         </div>
+        
     </div>
 <% end %> 
