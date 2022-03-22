@@ -42,6 +42,11 @@ gem 'devise-encryptable', '~> 0.2.0'
 #gem 'devise-i18n', '~> 1.10', '>= 1.10.2'
 
 
+############### Deploy    ############
+gem 'platform_sh_rails'
+gem "unicorn", "~> 6.0", :group => :production
+
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
