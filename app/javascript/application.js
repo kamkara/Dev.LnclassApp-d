@@ -3,14 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
-//  require bootstrap
-//= require bootstrap
-//= require jquery3
-//= require popper
-//= require jquery
-//= require jquery_ujs
-
-
 // rich_text import
 import "trix"
 import "@rails/actiontext"

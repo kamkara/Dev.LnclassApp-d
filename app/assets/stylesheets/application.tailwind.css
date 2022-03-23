@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .ln--field {
+    @apply p-2 rounded-md block border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
+  }
+}
+
+
+@import 'components/actiontext.css';
