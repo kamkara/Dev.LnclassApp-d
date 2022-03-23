@@ -5,4 +5,4 @@
 
 db:
     type: postgresql:13
-    disk: 5120
+    disk: 4096
