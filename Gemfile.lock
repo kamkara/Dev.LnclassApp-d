@@ -296,7 +296,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
-  unicorn (~> 6.0)
+  unicorn (~> 6.1)
   web-console
   webdrivers
 
