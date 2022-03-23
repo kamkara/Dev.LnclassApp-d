@@ -4,5 +4,7 @@ import "controllers"
 
 
 // rich_text import
-import "trix"
-import "@rails/actiontext"
+
+require("trix")
+require("@rails/actiontext")
+
