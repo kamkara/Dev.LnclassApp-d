@@ -45,6 +45,11 @@ gem 'devise-encryptable', '~> 0.2.0'
 gem 'platform_sh_rails'
 gem 'unicorn', '~> 6.1', :group => :production
 
+
+##################
+gem 'active_analytics'
+gem 'crawler_detect'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
