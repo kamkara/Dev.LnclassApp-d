@@ -8,7 +8,7 @@ dependencies:
 
 relationships:
     database: 'db:postgresql'
-.
+
 disk: 1024
 
 # Set environment variables to adjust how Rails will run.
