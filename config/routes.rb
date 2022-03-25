@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+ 
+  # config/routes.rb
   
+  mount ActiveAnalytics::Engine, at: "analytics" # http://localhost:3000/analytics
+
   root to:'welcome#index'
   get "feeds", to:'home#index'
   

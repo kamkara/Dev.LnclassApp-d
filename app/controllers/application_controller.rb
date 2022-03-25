@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
     #login params
     
     before_action :configure_permitted_parameters, if: :devise_controller?
+    #PAGE VIEW TRACKING
+    before_action :record_page_view
+
     before_action :find_levels
     #before_action :find_schools
     #before_action :find_cityEreas
@@ -44,5 +47,11 @@ class ApplicationController < ActionController::Base
       def find_cityEreas
         #@city_ereas = CityErea.all
       end
+
+      def record_page_view
+    # Add a condition to record only your canonical domain
+    # and use a gem such as crawler_detect to skip bots.
+        ActiveAnalytics.record_request(request)
+    end
 
 end
