@@ -86,14 +86,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database_url: postgresdatabase.internal
-  database_name: main
-  database_username: main
-  database_password: main
-  host: localhost
-  port: 5432
-  #database: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
-  #username: <%= ENV['LNCLASSAPP_DATABASE_USERNAME'] %>
-  #password: <%= ENV['LNCLASSAPP_DATABASE_PASSWORD'] %>
-  #host: <%= ENV['LNCLASSAPP_DATABASE_HOST'] %>
-  #port: <%= ENV['LNCLASSAPP_DATABASE_PORT'] %>
+  database_url: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
+  database_name: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
+  database_username: <%= ENV['LNCLASSAPP_DATABASE_USERNAME'] %>
+  database_password: <%= ENV['LNCLASSAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['LNCLASSAPP_DATABASE_HOST'] %>
+  port: <%= ENV['LNCLASSAPP_DATABASE_PORT'] %>
