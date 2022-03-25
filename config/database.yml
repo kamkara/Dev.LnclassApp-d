@@ -83,15 +83,23 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database_url: postgresdatabase.internal
+#  database_name: main
+#  database_username: main
+#  database_password: main
+#  host: localhost
+#  port: 5432
+
 production:
   adapter: postgresql
   encoding: unicode
-  database_url: postgresdatabase.internal
-  database_name: main
-  database_username: main
-  database_password: main
-  host: localhost
-  port: 5432
+  database: main
+  username: main
+  password: main
+  host: database.internal
   #database: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
   #username: <%= ENV['LNCLASSAPP_DATABASE_USERNAME'] %>
   #password: <%= ENV['LNCLASSAPP_DATABASE_PASSWORD'] %>
