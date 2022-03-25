@@ -100,6 +100,7 @@ production:
   username: main
   password: main
   host: database.internal
+  port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   #database: <%= ENV['LNCLASSAPP_DATABASE_NAME'] %>
   #username: <%= ENV['LNCLASSAPP_DATABASE_USERNAME'] %>
