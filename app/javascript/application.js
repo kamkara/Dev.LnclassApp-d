@@ -3,8 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
-// rich_text import
-
-require("trix")
-require("@rails/actiontext")
-
+// application.js
+import "trix"
+import "@rails/actiontext"
