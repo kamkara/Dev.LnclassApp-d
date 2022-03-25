@@ -93,4 +93,4 @@ web:
         # will be defined in an environment variable named SOCKET.
         socket_family: "unix"
     commands:
-        start: 'bundle exec unicorn -l $SOCKET'
+        start: 'bundle exec unicorn'

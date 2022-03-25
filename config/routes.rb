@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
  
   # config/routes.rb
-  authenticate :user, -> (u) { u.team? } do # Supposing there is a User#admin? method
-  end
+  
   mount ActiveAnalytics::Engine, at: "analytics" # http://localhost:3000/analytics
 
   root to:'welcome#index'
