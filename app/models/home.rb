@@ -3,7 +3,7 @@ class Home < ApplicationRecord
 #############  Request Scope ######
   scope :ready, -> { where("published == false")}
   scope :chrono, -> { order(created_at: :desc)}
-  scope :
+  
   #current user completed exercice
     def completed_by(user)
         results.any? {|r| r.user == user}
