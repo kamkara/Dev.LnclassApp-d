@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"  class="scroll-smooth">
   <head>
     <title><%= title %></title>
     <meta charset="utf-8">
@@ -10,17 +10,29 @@
     <meta name="description" content="<%= description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <!-- Favicon-->
     <%= favicon_link_tag asset_path('HomePage/favicon.ico') %>
     
+    <!-- ==== STYLESHEET ==== -->
+  
+   <style>
+   <%= render "layouts/shared/header_css" %>
+   </style>
+    
     <!-- ==== WOW JS ==== -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+    <%= render "layouts/shared/header_js" %>
+    </script>
+     
+     <script>
+      new WOW().init();
+    </script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
@@ -32,53 +44,11 @@
     <!-- ====== Script Start ====== -->
 
     <!-- ====== Script End ====== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
-   
+    <script>
+    
+    <%= render "layouts/shared/footer_js" %>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <script>
-      // ==== for menu scroll
-      const pageLink = document.querySelectorAll(".ud-menu-scroll");
-
-      pageLink.forEach((elem) => {
-        elem.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            offsetTop: 1 - 60,
-          });
-        });
-      });
-
-      // section menu active
-      function onScroll(event) {
-        const sections = document.querySelectorAll(".ud-menu-scroll");
-        const scrollPos =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop;
-
-        for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (
-            refElement.offsetTop <= scrollTopMinus &&
-            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-          ) {
-            document
-              .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
-      }
-
-      window.document.addEventListener("scroll", onScroll);
-    </script>
   </body>
 </html>
