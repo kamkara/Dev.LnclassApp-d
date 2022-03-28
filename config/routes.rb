@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root to:'welcome#index'
   get "feeds", to:'home#index'
+  get "team", to:'home#team'
   
   #Course
   get "courses-show", to:"courses#show"

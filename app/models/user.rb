@@ -64,9 +64,11 @@ class User < ApplicationRecord
       self.slug = "civ #{self.full_name} #{self.level_name}"
     elsif self.role === "Teacher"
       self.slug = "civ #{self.full_name} #{self.material_name}"
+    elsif self.role === "Team"
+      self.slug = "team #{self.full_name}"
     else
       self.slug = "civ #{self.full_name}"
-      
+    
     end
   end
 
