@@ -6,3 +6,7 @@ import "controllers"
 // application.js
 import "trix"
 import "@rails/actiontext"
+
+
+import './components/wow.min.js';
+import './components/main.js';
