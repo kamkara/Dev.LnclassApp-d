@@ -6,3 +6,7 @@ import "controllers"
 // application.js
 import "trix"
 import "@rails/actiontext"
+
+
+import Rails from 'rails-ujs';
+Rails.start();
